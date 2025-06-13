@@ -8,10 +8,10 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:5000/shorten", {
+      const { data } = await axios.post("https://quickurl-1u8b.onrender.com/shorten", {
         originalUrl: url,
       });
-      setShortUrl(`http://localhost:5000/${data.shortUrl}`);
+      setShortUrl(`https://quickurl-1u8b.onrender.com/${data.shortUrl}`);
     } catch (error) {
       console.error("Error shortening URL:", error);
     }
