@@ -5,7 +5,11 @@ const cors = require("cors");
 require("dotenv").config();
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://quickurl-1.onrender.com",
+  }),
+);
 mongoose.connect(process.env.MONGO_URI);
 const urlSchema = new mongoose.Schema({
   originalUrl: String,
